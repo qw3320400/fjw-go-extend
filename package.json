@@ -14,7 +14,9 @@
         "onCommand:extension.sayHello",
         "onCommand:extension.myTestCMD",
         "onCommand:extension.expandErrorReturn",
-        "onCommand:extension.foldErrorReturn"
+        "onCommand:extension.foldErrorReturn",
+        "onCommand:extension.disableGoreturns",
+        "onCommand:extension.enableGoreturns"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -35,6 +37,14 @@
             {
                 "command": "extension.foldErrorReturn",
                 "title": "Fold"
+            },
+            {
+                "command": "extension.disableGoreturns",
+                "title": "FmtOff"
+            },
+            {
+                "command": "extension.enableGoreturns",
+                "title": "FmtOn"
             }
         ]
     },

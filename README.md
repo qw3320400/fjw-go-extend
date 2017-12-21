@@ -6,3 +6,4 @@ commond:
 
 	fold: replace if err != nil { return ... } with @ERR(...)
 
+  

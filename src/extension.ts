@@ -2,6 +2,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import cp = require('child_process');
 import { resolve, format } from 'url';
 
 // this method is called when your extension is activated
@@ -100,10 +101,20 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.workspace.applyEdit(workspaceEdit)
     })
 
+    let disableGoreturns = vscode.commands.registerCommand('extension.disableGoreturns', () => {
+        cp.execSync(`mv /Users/fangjianwei/Desktop/code/klook-libs/bin/goreturns /Users/fangjianwei/Desktop/code/klook-libs/bin/goreturns_bak`)
+    })
+
+    let enableGoreturns = vscode.commands.registerCommand('extension.enableGoreturns', () => {
+        cp.execSync(`mv /Users/fangjianwei/Desktop/code/klook-libs/bin/goreturns_bak /Users/fangjianwei/Desktop/code/klook-libs/bin/goreturns`)
+    })
+
     context.subscriptions.push(disposable);
     context.subscriptions.push(myTestCMD);
     context.subscriptions.push(expandErrorReturn);
     context.subscriptions.push(foldErrorReturn);
+    context.subscriptions.push(disableGoreturns);
+    context.subscriptions.push(enableGoreturns);
 }
 
 // this method is called when your extension is deactivated
