@@ -1,3 +1,2 @@
 feature1
 a bug
-feature2
