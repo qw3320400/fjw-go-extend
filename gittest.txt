@@ -2,3 +2,4 @@ feature1
 bug
 bug
 bug
+feature3
